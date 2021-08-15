@@ -10616,6 +10616,7 @@ define([
         switch (Global.TransactionType) {
           case Enum.TransactionType.Sale:
             if (this.ValidateOutOfStockItems()) this.CreateInvoice(Global.IsPosted);
+	    if (!Global.PrintOptions.PrintReceipt && !Global.PrintOptions.EmailReceipt) {this.ClearTransaction();}
             break;
           case Enum.TransactionType.Order:
             this.CreateOrder();
