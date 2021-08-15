@@ -81,6 +81,7 @@ define([
     		"tap #li-serialLot"                : "liSerialLot_touchstart",		
     		"tap #li-notes"                    : "liNotes_touchstart",
     		"change #itemDetail-umList"        : "selectUnitMeasure_touchstart",
+            	"tap #itemDetail-umList"	   :  "selectUnitMeasure_tap",
     		"change #itemDetail-warehouseList" : "selectWarehouseCode_touchstart",
     		"tap #itemDetail-warehouseList"    : "selectWarehouseCode_tap",
     		
@@ -1081,6 +1082,8 @@ define([
 		    e.preventDefault();
 			e.stopPropagation();
 		},
+		
+		selectUnitMeasure_tap: function (e) {e.stopPropagation()},
 		
 		ViewFreeStock : function() {
 			this.model.viewFreeStock();
